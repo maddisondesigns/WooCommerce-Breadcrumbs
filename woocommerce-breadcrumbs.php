@@ -158,7 +158,7 @@ class WooCommerce_Breadcrumbs_plugin {
 	 * Display a section message
 	 */
 	public function wcb_plugin_section_callback() {
-		printf( '<p>%s</p>', __( 'Customise the look of your WooCommerce breandcrumbs, using the settings below. Alternatively, disable them altogether by unchecking &lsquo;Enable breadcrumbs&rsquo;.', 'woocommerce-breadcrumbs' ) );
+		printf( '<p>%s</p>', __( 'Customise the look of your WooCommerce breadcrumbs, using the settings below. Alternatively, disable them altogether by unchecking &lsquo;Enable breadcrumbs&rsquo;.', 'woocommerce-breadcrumbs' ) );
 	}
 
 	/**
