@@ -80,7 +80,7 @@ class WooCommerce_Breadcrumbs_plugin {
 		}
 
 		if ( $this->wootheme_theme ) {
-			$message = esc_html("It looks like you're using a WooThemes theme. WooTheme themes typically disables the WooCommerce breadcrumbs and uses the WooFramework Breadcrumbs instead. The WooFramework Breadcrumbs don't have as many options to set as the WooCommerce breadcrumbs.", 'woocommerce-breadcrumbs' );
+			$message = esc_html("It looks like you're using a WooThemes theme. If you notice a few less breadcrumb options than you may expect this is because WooThemes disables the WooCommerce breadcrumbs in favour of the WooFramework Breadcrumbs.", 'woocommerce-breadcrumbs' );
 			add_settings_error( 'woocommerce-breadcrumb-warnings', esc_attr( 'wcb_woo_framework_breadcrumbs' ), $message, 'updated' );
 		}
 
