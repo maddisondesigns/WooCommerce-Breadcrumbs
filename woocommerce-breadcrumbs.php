@@ -95,7 +95,7 @@ class WooCommerce_Breadcrumbs_plugin {
 				echo '<p>';
 					submit_button( _x( 'Save Changes', 'breadcrumb', 'woocommerce-breadcrumbs' ), 'primary', 'submit', false  );
 					$other_attributes = array (
-						'onclick' => "return confirm( '" . esc_js( esc_html__( 'Click OK to reset. Any theme settings will be lost!', 'woocommerce-breadcrumbs' ) ) . "' );"
+						'onclick' => "return confirm( '" . esc_js( esc_html__( 'Click OK to reset to the default breadcrumb settings!', 'woocommerce-breadcrumbs' ) ) . "' );"
 						);
 					submit_button( 'Restore Defaults', 'secondary alignright', 'restore_defaults', false, $other_attributes );
 				echo '</p>';
