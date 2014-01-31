@@ -2,6 +2,8 @@
 Author URI: http://maddisondesigns.com
 Plugin URI: http://maddisondesigns.com/woocommerce-breadcrumbs
 Contributors: ahortin
+Tags: ecommerce, e-commerce, commerce, woothemes, wordpress ecommerce, woocommerce, breadcrumbs
+Donate Link: http://maddisondesigns.com/woocommerce-breadcrumbs
 Requires at least: 3.6
 Tested up to: 3.8.1
 Stable tag: 1.0
@@ -16,15 +18,15 @@ WooCommerce Breadcrumbs is a simple WordPress plugin that gives you the ability 
 
 By changing the html surrounding your breadcrumbs, you're able to style your breadcrumbs in different ways. For example, the default breadcrumbs simply display links with a seperator character. Using WooCommerce Breadcrumbs, you can change them to display as an unsorted listed of links instead.
 
-WooCommerce Breadcrumbs gives you the following settings:
+= WooCommerce Breadcrumbs gives you the following settings =
 
-Breadcrumb Delimiter - This is the delimeter to use between each breadcrumb
-Wrap before - The opening html tag to wrap before all your breadcrumbs
-Wrap after - The closing html tag to wrap after all your breadcrumbs
-Before - The opening html tag to wrap before each individual breadcrumb
-After - The closing html tag to wrap after each individual breadcrumb
-Home text - The text to use for the ‘Home’ breadcrumb
-Home URL - The URL that the ‘Home’ breadcrumb links to
+* Breadcrumb separator: This is the separator to use between each breadcrumb
+* Wrap before: The opening html tag to wrap before all your breadcrumbs
+* Wrap after: The closing html tag to wrap after all your breadcrumbs
+* Before: The opening html tag to wrap before each individual breadcrumb
+* After: The closing html tag to wrap after each individual breadcrumb
+* Home text: The text to use for the ‘Home’ breadcrumb
+* Home URL: The URL that the ‘Home’ breadcrumb links to
 
 If need be, you can also disable the breadcrumbs completely by unticking the 'Enable breadcrumbs' checkbox. This will stop the breadcrumbs from displaying on your site.
 
@@ -56,3 +58,6 @@ Certainly! On the settings page, simply untick the 'Enable breadcrumbs' checkbox
 
 = 1.0 =
 - Initial version. Yay!
+
+
+== Upgrade Notice ==
