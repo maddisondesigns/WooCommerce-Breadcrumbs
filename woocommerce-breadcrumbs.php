@@ -111,7 +111,7 @@ class WooCommerce_Breadcrumbs_plugin {
 		register_setting( 'wcb_breadcrumb_options', 'wcb_breadcrumb_options', array( $this, 'wcb_plugin_sanitize_options' ) );
 		add_settings_section( 'wcb_general_settings', 'Breadcrumb Settings', array( $this, 'wcb_plugin_section_callback' ), 'woocommerce-breadcrumbs' );
 		add_settings_field( 'wcb_enable_breadcrumbs', 'Enable breadcrumbs', array( $this, 'wcb_enable_breadcrumbs_callback' ), 'woocommerce-breadcrumbs', 'wcb_general_settings' );
-		add_settings_field( 'wcb_breadcrumb_delimiter', 'Breadcrumb delimiter', array( $this, 'wcb_breadcrumb_delimiter_callback' ), 'woocommerce-breadcrumbs', 'wcb_general_settings' );
+		add_settings_field( 'wcb_breadcrumb_delimiter', 'Breadcrumb separator', array( $this, 'wcb_breadcrumb_delimiter_callback' ), 'woocommerce-breadcrumbs', 'wcb_general_settings' );
 		add_settings_field( 'wcb_wrap_before', 'Wrap before', array( $this, 'wcb_wrap_before_callback' ), 'woocommerce-breadcrumbs', 'wcb_general_settings' );
 		add_settings_field( 'wcb_wrap_after', 'Wrap after', array( $this, 'wcb_wrap_after_callback' ), 'woocommerce-breadcrumbs', 'wcb_general_settings' );
 		if ( !$this->wootheme_theme ) {
@@ -179,7 +179,7 @@ class WooCommerce_Breadcrumbs_plugin {
 
 		printf( '<input id="wcb_breadcrumb_delimiter" class="regular-text" name="wcb_breadcrumb_options[wcb_breadcrumb_delimiter]" type="text" value="%s"/>',
 			$breadcrumb_delimiter  );
-		printf( '<p class="description">%s</p>', __( 'This is the delimeter to use between each breadcrumb.', 'woocommerce-breadcrumbs' ) );
+		printf( '<p class="description">%s</p>', __( 'This is the separator to use between each breadcrumb.', 'woocommerce-breadcrumbs' ) );
 	}
 
 	/**
