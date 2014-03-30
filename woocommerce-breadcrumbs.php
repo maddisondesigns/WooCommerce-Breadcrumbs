@@ -11,7 +11,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 
-class WooCommerce_Breadcrumbs_plugin {
+class Wcb_WooCommerce_Breadcrumbs_plugin {
 
 	private $options;
 	private $breadcrumb_defaults;
@@ -95,7 +95,7 @@ class WooCommerce_Breadcrumbs_plugin {
 				echo '<p>';
 					submit_button( _x( 'Save Changes', 'breadcrumb', 'woocommerce-breadcrumbs' ), 'primary', 'submit', false  );
 					$other_attributes = array (
-						'onclick' => "return confirm( '" . esc_js( esc_html__( 'Click OK to reset to the default breadcrumb settings!', 'woocommerce-breadcrumbs' ) ) . "' );"
+						'onclick' => "return confirm( '" . esc_html__( 'Click OK to reset to the default breadcrumb settings!', 'woocommerce-breadcrumbs' ) . "' );"
 						);
 					submit_button( 'Restore Defaults', 'secondary alignright', 'restore_defaults', false, $other_attributes );
 				echo '</p>';
@@ -338,4 +338,4 @@ class WooCommerce_Breadcrumbs_plugin {
 	}
 }
 
-$woocommerce_breadcrumbs = new WooCommerce_Breadcrumbs_plugin();
+$wcb_woocommerce_breadcrumbs = new Wcb_WooCommerce_Breadcrumbs_plugin();
