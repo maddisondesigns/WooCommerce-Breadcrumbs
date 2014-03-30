@@ -14,17 +14,19 @@ A simple plugin to style the WooCommerce Breadcrumbs or disable them altogether
 
 == Description ==
 
-WooCommerce Breadcrumbs is a simple WordPress plugin that gives you the ability to restyle the WooCommerce breadcrumbs. It also gives you the ability to disable them completely so they longer display.
+WooCommerce Breadcrumbs is a simple WordPress plugin that allows you to restyle the WooCommerce breadcrumbs. It also gives you the ability to disable them completely so they no longer display.
 
-By changing the html surrounding your breadcrumbs, you're able to style your breadcrumbs in different ways. For example, the default breadcrumbs simply display links with a seperator character. Using WooCommerce Breadcrumbs, you can change them to display as an unsorted listed of links instead.
+By changing the HTML surrounding your breadcrumbs, you’re able to provide better options for styling your breadcrumbs in different ways. For example, the default breadcrumbs simply display links with a separator character. Using WooCommerce Breadcrumbs, you can change them to display as an unsorted list of links instead.
+
+NOTE: This plugin wont actually style your breadcrumbs for you. It simply gives you the tools to change the HTML that wraps around your breadcrumbs. 
 
 = WooCommerce Breadcrumbs gives you the following settings =
 
 * Breadcrumb separator: This is the separator to use between each breadcrumb
-* Wrap before: The opening html tag to wrap before all your breadcrumbs
-* Wrap after: The closing html tag to wrap after all your breadcrumbs
-* Before: The opening html tag to wrap before each individual breadcrumb
-* After: The closing html tag to wrap after each individual breadcrumb
+* Wrap before: The opening HTML tag to wrap before all your breadcrumbs
+* Wrap after: The closing HTML tag to wrap after all your breadcrumbs
+* Before: The opening HTML tag to wrap before each individual breadcrumb
+* After: The closing HTML tag to wrap after each individual breadcrumb
 * Home text: The text to use for the ‘Home’ breadcrumb
 * Home URL: The URL that the ‘Home’ breadcrumb links to
 
@@ -51,7 +53,9 @@ Certainly! On the settings page, simply untick the 'Enable breadcrumbs' checkbox
 
 == Screenshots ==
 
-1. WooCommerce Breadcrumb settings
+1. WooCommerce Breadcrumb sefault settings
+2. WooCommerce Breadcrumb settings
+3. WooCommerce Breadcrumb settings for WooTheme Themes
 
 
 == Changelog ==
