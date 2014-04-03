@@ -6,6 +6,7 @@ Description: A simple plugin to style the WooCommerce Breadcrumbs or disable the
 Version: 1.0
 Author: Anthony Hortin
 Author URI: http://maddisondesigns.com
+Text Domain: woocommerce-breadcrumbs
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
