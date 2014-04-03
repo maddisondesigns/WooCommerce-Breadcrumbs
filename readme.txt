@@ -1,10 +1,8 @@
 === WooCommerce Breadcrumbs ===
-Author URI: http://maddisondesigns.com
-Plugin URI: http://maddisondesigns.com/woocommerce-breadcrumbs
 Contributors: ahortin
-Tags: ecommerce, e-commerce, commerce, woothemes, wordpress ecommerce, woocommerce, breadcrumbs
 Donate Link: http://maddisondesigns.com/woocommerce-breadcrumbs
-Requires at least: 3.6
+Tags: ecommerce, e-commerce, commerce, woothemes, wordpress ecommerce, woocommerce, breadcrumbs
+Requires at least: 3.8
 Tested up to: 3.8.1
 Stable tag: 1.0
 License: GPLv2 or later
@@ -53,7 +51,7 @@ Certainly! On the settings page, simply untick the 'Enable breadcrumbs' checkbox
 
 == Screenshots ==
 
-1. WooCommerce Breadcrumb sefault settings
+1. WooCommerce Breadcrumb default settings
 2. WooCommerce Breadcrumb settings
 3. WooCommerce Breadcrumb settings for WooTheme Themes
 
