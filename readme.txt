@@ -3,7 +3,7 @@ Contributors: ahortin
 Donate Link: http://maddisondesigns.com/woocommerce-breadcrumbs
 Tags: ecommerce, e-commerce, commerce, woothemes, wordpress ecommerce, woocommerce, breadcrumbs
 Requires at least: 3.8
-Tested up to: 3.8.1
+Tested up to: 3.9
 Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -31,6 +31,8 @@ NOTE: This plugin wont actually style your breadcrumbs for you. It simply gives 
 If need be, you can also disable the breadcrumbs completely by unticking the 'Enable breadcrumbs' checkbox. This will stop the breadcrumbs from displaying on your site.
 
 If you notice there are a few less breadcrumb options on the settings page than you expected, then you're mostly likely using a WooThemes Theme. WooTheme themes disable the WooCommerce breadcrumbs in favour of the WooFramework Breadcrumbs. The downside to this is that there aren't quite as many options that can be changed with the WooFramework Breadcrumbs.
+
+To see some examples of how you can style your WooCommerce Breadcrumbs, check out the [plugin homepage](http://maddisondesigns.com/woocommerce-breadcrumbs/).
 
 
 == Installation ==
