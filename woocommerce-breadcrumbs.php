@@ -3,7 +3,7 @@
 Plugin Name: WooCommerce Breadcrumbs
 Plugin URI: http://maddisondesigns.com/woocommerce-breadcrumbs
 Description: A simple plugin to style the WooCommerce Breadcrumbs or disable them altogether
-Version: 1.0.1
+Version: 1.0.2
 Author: Anthony Hortin
 Author URI: http://maddisondesigns.com
 Text Domain: woocommerce-breadcrumbs
@@ -39,7 +39,7 @@ class Wcb_WooCommerce_Breadcrumbs_plugin {
 
 		$this->options = ( get_option( 'wcb_breadcrumb_options' ) === false ? $this->breadcrumb_defaults : get_option( 'wcb_breadcrumb_options' ) );
 
-		if( !isset( $this->options['wcb_enable_breadcrumbs'] ) ) {
+		if( empty( $this->options['wcb_enable_breadcrumbs'] ) ) {
 			add_action( 'init', array( $this, 'wcb_remove_woocommerce_breadcrumb' ) );
 		}
 	}
@@ -144,7 +144,7 @@ class Wcb_WooCommerce_Breadcrumbs_plugin {
 			$this->wootheme_theme = false;
 		}
 
-		if( isset( $this->options['wcb_enable_breadcrumbs'] ) ) {
+		if( !empty( $this->options['wcb_enable_breadcrumbs'] ) ) {
 			if ( $this->wootheme_theme ) {
 				add_filter( 'woo_breadcrumbs_args', array( $this, 'wcb_woocommerce_set_breadcrumbs' ), 11 );
 			}
@@ -166,9 +166,10 @@ class Wcb_WooCommerce_Breadcrumbs_plugin {
 	 * Display and fill the form field for the delimeter setting
 	 */
 	function wcb_enable_breadcrumbs_callback() {
-		$enable_breadcrumbs = ( isset( $this->options['wcb_enable_breadcrumbs'] ) ) ? $this->options['wcb_enable_breadcrumbs'] : '';
+		$enable_breadcrumbs = ( isset( $this->options['wcb_enable_breadcrumbs'] ) ? $this->options['wcb_enable_breadcrumbs'] : '0' );
 
-		printf( '<input id="wcb_enable_breadcrumbs" type="checkbox" name="wcb_breadcrumb_options[wcb_enable_breadcrumbs]" value="1" %s/>',
+		printf( '<input id="wcb_enable_breadcrumbs" type="checkbox" name="wcb_breadcrumb_options[wcb_enable_breadcrumbs]" value="%1$s" %2$s/>',
+			$enable_breadcrumbs,
 			checked( $enable_breadcrumbs, true, false ) );
 	}
 
@@ -176,7 +177,7 @@ class Wcb_WooCommerce_Breadcrumbs_plugin {
 	 * Display and fill the form field for the delimeter setting
 	 */
 	public function wcb_breadcrumb_delimiter_callback() {
-		$breadcrumb_delimiter = ( isset( $this->options['wcb_breadcrumb_delimiter'] ) ) ? $this->options['wcb_breadcrumb_delimiter'] : '';
+		$breadcrumb_delimiter = ( isset( $this->options['wcb_breadcrumb_delimiter'] ) ? $this->options['wcb_breadcrumb_delimiter'] : '' );
 
 		printf( '<input id="wcb_breadcrumb_delimiter" class="regular-text" name="wcb_breadcrumb_options[wcb_breadcrumb_delimiter]" type="text" value="%s"/>',
 			$breadcrumb_delimiter  );
@@ -187,7 +188,7 @@ class Wcb_WooCommerce_Breadcrumbs_plugin {
 	 * Display and fill the form field for the Wrap Before setting
 	 */
 	public function wcb_wrap_before_callback() {
-		$wrap_before = ( isset( $this->options['wcb_wrap_before'] ) ) ? $this->options['wcb_wrap_before'] : '';
+		$wrap_before = ( isset( $this->options['wcb_wrap_before'] ) ? $this->options['wcb_wrap_before'] : '' );
 
 		printf( '<input id="wcb_wrap_before" class="regular-text" name="wcb_breadcrumb_options[wcb_wrap_before]" type="text" value="%s"/>',
 			esc_attr( $wrap_before ) );
@@ -204,7 +205,7 @@ class Wcb_WooCommerce_Breadcrumbs_plugin {
 	 * Display and fill the form field for the Wrap After setting
 	 */
 	public function wcb_wrap_after_callback() {
-		$wrap_after = ( isset( $this->options['wcb_wrap_after'] ) ) ? $this->options['wcb_wrap_after'] : '';
+		$wrap_after = ( isset( $this->options['wcb_wrap_after'] ) ? $this->options['wcb_wrap_after'] : '' );
 
 		printf( '<input id="wcb_wrap_after" class="regular-text" name="wcb_breadcrumb_options[wcb_wrap_after]" type="text" value="%s"/>',
 			esc_attr( $wrap_after ) );
@@ -221,7 +222,7 @@ class Wcb_WooCommerce_Breadcrumbs_plugin {
 	 * Display and fill the form field for the Before setting
 	 */
 	public function wcb_before_callback() {
-		$before = ( isset( $this->options['wcb_before'] ) ) ? $this->options['wcb_before'] : '';
+		$before = ( isset( $this->options['wcb_before'] ) ? $this->options['wcb_before'] : '' );
 
 		printf( '<input id="wcb_before" class="regular-text" name="wcb_breadcrumb_options[wcb_before]" type="text" value="%s"/>',
 			esc_attr( $before ) );
@@ -232,7 +233,7 @@ class Wcb_WooCommerce_Breadcrumbs_plugin {
 	 * Display and fill the form field for the After setting
 	 */
 	public function wcb_after_callback() {
-		$after = ( isset( $this->options['wcb_after'] ) ) ? $this->options['wcb_after'] : '';
+		$after = ( isset( $this->options['wcb_after'] ) ? $this->options['wcb_after'] : '' );
 
 		printf( '<input id="wcb_after" class="regular-text" name="wcb_breadcrumb_options[wcb_after]" type="text" value="%s"/>',
 			esc_attr( $after ) );
@@ -243,7 +244,7 @@ class Wcb_WooCommerce_Breadcrumbs_plugin {
 	 * Display and fill the form field for the Home Text setting
 	 */
 	public function wcb_home_text_callback() {
-		$home_text = ( isset( $this->options['wcb_home_text'] ) ) ? $this->options['wcb_home_text'] : '';
+		$home_text = ( isset( $this->options['wcb_home_text'] ) ? $this->options['wcb_home_text'] : '' );
 
 		printf( '<input id="wcb_home_text" class="regular-text" name="wcb_breadcrumb_options[wcb_home_text]" type="text" value="%s"/>',
 			$home_text );
@@ -254,7 +255,7 @@ class Wcb_WooCommerce_Breadcrumbs_plugin {
 	 * Display and fill the form field for the Home URL setting
 	 */
 	public function wcb_home_url_callback() {
-		$home_url = ( isset( $this->options['wcb_home_url'] ) ) ? $this->options['wcb_home_url'] : '';
+		$home_url = ( isset( $this->options['wcb_home_url'] ) ? $this->options['wcb_home_url'] : '' );
 
 		printf( '<input id="wcb_home_url" class="regular-text" name="wcb_breadcrumb_options[wcb_home_url]" type="text" value="%s"/>',
 			esc_attr( $home_url ) );
@@ -275,7 +276,7 @@ class Wcb_WooCommerce_Breadcrumbs_plugin {
 		}
 
 		// Validate the inputs
-		$valid['wcb_enable_breadcrumbs'] = $input['wcb_enable_breadcrumbs'];
+		$valid['wcb_enable_breadcrumbs'] = ( isset( $input['wcb_enable_breadcrumbs'] ) ? '1' : '0' );
 
 		$valid['wcb_breadcrumb_delimiter'] = wp_kses_data( $input['wcb_breadcrumb_delimiter'] );
 
@@ -302,7 +303,7 @@ class Wcb_WooCommerce_Breadcrumbs_plugin {
 			remove_filter( 'woo_main_before', 'woo_display_breadcrumbs', 10 );
 		}
 		else {
-			remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
+			remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
 		}
 	}
 
