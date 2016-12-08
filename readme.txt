@@ -3,7 +3,7 @@ Contributors: ahortin
 Donate Link: http://maddisondesigns.com/woocommerce-breadcrumbs
 Tags: ecommerce, e-commerce, commerce, woothemes, wordpress ecommerce, woocommerce, breadcrumbs
 Requires at least: 3.8
-Tested up to: 4.2.2
+Tested up to: 4.7
 Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -16,7 +16,7 @@ WooCommerce Breadcrumbs is a simple WordPress plugin that allows you to restyle 
 
 By changing the HTML surrounding your breadcrumbs, you’re able to provide better options for styling your breadcrumbs in different ways. For example, the default breadcrumbs simply display links with a separator character. Using WooCommerce Breadcrumbs, you can change them to display as an unsorted list of links instead.
 
-NOTE: This plugin wont actually style your breadcrumbs for you. It simply gives you the tools to change the HTML that wraps around your breadcrumbs. 
+NOTE: This plugin wont actually style your breadcrumbs for you. It simply gives you the tools to change the HTML that wraps around your breadcrumbs.
 
 = WooCommerce Breadcrumbs gives you the following settings =
 
