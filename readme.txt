@@ -4,7 +4,7 @@ Donate Link: http://maddisondesigns.com/woocommerce-breadcrumbs
 Tags: ecommerce, e-commerce, commerce, woothemes, wordpress ecommerce, woocommerce, breadcrumbs
 Requires at least: 3.8
 Tested up to: 4.8
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -59,6 +59,9 @@ Certainly! On the settings page, simply untick the 'Enable breadcrumbs' checkbox
 
 
 == Changelog ==
+
+= 1.0.3 =
+- Updated version number as the .org directory doesn't currently update the Last Updated date by simply updating the Tested up to value
 
 = 1.0.2 =
 - Fixed undefined index error due to checkbox sanitization
