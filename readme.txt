@@ -3,8 +3,8 @@ Contributors: ahortin
 Donate Link: http://maddisondesigns.com/woocommerce-breadcrumbs
 Tags: ecommerce, e-commerce, commerce, woothemes, wordpress ecommerce, woocommerce, breadcrumbs
 Requires at least: 3.8
-Tested up to: 4.8
-Stable tag: 1.0.3
+Tested up to: 4.9
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -50,6 +50,9 @@ You're most likely using a WooThemes theme. WooTheme themes disable the WooComme
 = Can I disable the WooCommerce breadcrumbs? =
 Certainly! On the settings page, simply untick the 'Enable breadcrumbs' checkbox and save your settings.
 
+= How do I get my breadcrumbs back after disabling them? =
+The easiest method is just to deactivate the plugin. Alternatively, simply tick the 'Enable breadcrumbs' checkbox and save your settings.
+
 
 == Screenshots ==
 
@@ -59,6 +62,10 @@ Certainly! On the settings page, simply untick the 'Enable breadcrumbs' checkbox
 
 
 == Changelog ==
+
+= 1.0.4 =
+- Removed call to screen_icon() function as it's now deprecated
+- Added WC Tested tags to plugin header for compatibility check
 
 = 1.0.3 =
 - Updated version number as the .org directory doesn't currently update the Last Updated date by simply updating the Tested up to value
