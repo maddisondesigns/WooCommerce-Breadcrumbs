@@ -3,8 +3,8 @@ Contributors: ahortin
 Donate Link: http://maddisondesigns.com/woocommerce-breadcrumbs
 Tags: ecommerce, e-commerce, commerce, woothemes, wordpress ecommerce, woocommerce, breadcrumbs
 Requires at least: 3.8
-Tested up to: 4.9
-Stable tag: 1.0.4
+Tested up to: 5.0.3
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -62,6 +62,9 @@ The easiest method is just to deactivate the plugin. Alternatively, simply tick 
 
 
 == Changelog ==
+
+= 1.0.5 =
+- Updated WC Tested tags
 
 = 1.0.4 =
 - Removed call to screen_icon() function as it's now deprecated
