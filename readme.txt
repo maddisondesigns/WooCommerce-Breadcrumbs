@@ -4,7 +4,7 @@ Donate Link: http://maddisondesigns.com/woocommerce-breadcrumbs
 Tags: ecommerce, e-commerce, commerce, woothemes, wordpress ecommerce, woocommerce, breadcrumbs
 Requires at least: 4.6
 Tested up to: 5.4
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
