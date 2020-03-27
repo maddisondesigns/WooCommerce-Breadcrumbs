@@ -63,6 +63,10 @@ The easiest method is just to deactivate the plugin. Alternatively, simply tick 
 
 == Changelog ==
 
+= 1.0.6 =
+- Updated Breadcrumb separator setting to allow html tags
+- Updated WC Tested tags
+
 = 1.0.5 =
 - Updated WC Tested tags
 
