@@ -3,7 +3,7 @@
 Plugin Name: WooCommerce Breadcrumbs
 Plugin URI: http://maddisondesigns.com/woocommerce-breadcrumbs
 Description: A simple plugin to style the WooCommerce Breadcrumbs or disable them altogether
-Version: 1.0.6
+Version: 1.0.7
 WC requires at least: 2.6
 WC tested up to: 4.0
 Author: Anthony Hortin
@@ -19,6 +19,7 @@ class Wcb_WooCommerce_Breadcrumbs_plugin {
 	private $options;
 	private $breadcrumb_defaults;
 	private $wootheme_theme;
+	private $storefront_theme;
 
 	public function __construct() {
 
@@ -110,7 +111,14 @@ class Wcb_WooCommerce_Breadcrumbs_plugin {
 	 * Register and define the settings
 	 */
 	public function wcb_admin_init() {
-		register_setting( 'wcb_breadcrumb_options', 'wcb_breadcrumb_options', array( $this, 'wcb_plugin_sanitize_options' ) );
+		$settings_args = array(
+            'type' => 'array', 
+            'sanitize_callback' => array( $this, 'wcb_plugin_sanitize_options' ),
+            'show_in_rest' => false,
+            'default' => $this->breadcrumb_defaults,
+            );
+
+		register_setting( 'wcb_breadcrumb_options', 'wcb_breadcrumb_options', $settings_args );
 		add_settings_section( 'wcb_general_settings', 'Breadcrumb Settings', array( $this, 'wcb_plugin_section_callback' ), 'woocommerce-breadcrumbs' );
 		add_settings_field( 'wcb_enable_breadcrumbs', 'Enable breadcrumbs', array( $this, 'wcb_enable_breadcrumbs_callback' ), 'woocommerce-breadcrumbs', 'wcb_general_settings' );
 		add_settings_field( 'wcb_breadcrumb_delimiter', 'Breadcrumb separator', array( $this, 'wcb_breadcrumb_delimiter_callback' ), 'woocommerce-breadcrumbs', 'wcb_general_settings' );
@@ -134,7 +142,10 @@ class Wcb_WooCommerce_Breadcrumbs_plugin {
 	 * Set the breadcrumbs now that we have all the details
 	 */
 	public function wcb_init() {
-		if ( function_exists( 'woo_breadcrumbs' ) ) {
+		if ( class_exists( 'Storefront' ) ) {
+			$this->storefront_theme = true;
+		}
+		elseif ( function_exists( 'woo_breadcrumbs' ) ) {
 			remove_filter( 'woo_breadcrumbs_args', 'woo_custom_breadcrumbs_args', 10 );
 			$this->breadcrumb_defaults['wcb_breadcrumb_delimiter'] = '&gt;';
 			$this->breadcrumb_defaults['wcb_wrap_before'] = '<span class="breadcrumb-title">' . __( 'You are here:', 'woocommerce-breadcrumbs' ) . '</span>';
@@ -143,6 +154,7 @@ class Wcb_WooCommerce_Breadcrumbs_plugin {
 		}
 		else {
 			$this->wootheme_theme = false;
+			$this->storefront_theme = false;
 		}
 
 		if( !empty( $this->options['wcb_enable_breadcrumbs'] ) ) {
@@ -181,7 +193,7 @@ class Wcb_WooCommerce_Breadcrumbs_plugin {
 		$breadcrumb_delimiter = ( isset( $this->options['wcb_breadcrumb_delimiter'] ) ? $this->options['wcb_breadcrumb_delimiter'] : '' );
 
 		printf( '<input id="wcb_breadcrumb_delimiter" class="regular-text" name="wcb_breadcrumb_options[wcb_breadcrumb_delimiter]" type="text" value="%s"/>',
-			$breadcrumb_delimiter  );
+			esc_attr( $breadcrumb_delimiter )  );
 		printf( '<p class="description">%s</p>', __( 'This is the separator to use between each breadcrumb.', 'woocommerce-breadcrumbs' ) );
 	}
 
@@ -300,7 +312,10 @@ class Wcb_WooCommerce_Breadcrumbs_plugin {
 	* Remove the WooCommerce Breadcrumbs
 	*/
 	public function wcb_remove_woocommerce_breadcrumb() {
-		if ( $this->wootheme_theme ) {
+		if ( $this->storefront_theme ) {
+			remove_action( 'storefront_before_content', 'woocommerce_breadcrumb', 10 );
+		}
+		elseif ( $this->wootheme_theme ) {
 			remove_filter( 'woo_main_before', 'woo_display_breadcrumbs', 10 );
 		}
 		else {

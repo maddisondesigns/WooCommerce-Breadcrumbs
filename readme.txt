@@ -4,7 +4,7 @@ Donate Link: http://maddisondesigns.com/woocommerce-breadcrumbs
 Tags: ecommerce, e-commerce, commerce, woothemes, wordpress ecommerce, woocommerce, breadcrumbs
 Requires at least: 4.6
 Tested up to: 5.4
-Stable tag: 1.0.6
+Stable tag: 1.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -53,6 +53,8 @@ Certainly! On the settings page, simply untick the 'Enable breadcrumbs' checkbox
 = How do I get my breadcrumbs back after disabling them? =
 The easiest method is just to deactivate the plugin. Alternatively, simply tick the 'Enable breadcrumbs' checkbox and save your settings.
 
+= Why don't my breadcrumbs display properly when using the Storefront theme? =
+Storefront wraps their breadcrumbs with some custom HTML. This means you need to tweak your 'Breadcrumb separator', 'Wrap before' and 'Wrap after' settings. See <a href="https://wordpress.org/support/topic/breadcrumbs-not-disabled/">this support post</a> for more details.
 
 == Screenshots ==
 
@@ -62,6 +64,10 @@ The easiest method is just to deactivate the plugin. Alternatively, simply tick 
 
 
 == Changelog ==
+
+= 1.0.7 =
+- Fix display of Breadcrumb separator on settings page. Escape attribute when displaying value
+- Fix breadcrumb removal for Storefront theme as it uses its own hook rather than the default WooCommerce hook
 
 = 1.0.6 =
 - Updated Breadcrumb separator setting to allow html tags
