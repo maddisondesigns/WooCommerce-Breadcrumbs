@@ -5,7 +5,7 @@ Plugin URI: http://maddisondesigns.com/woocommerce-breadcrumbs
 Description: A simple plugin to style the WooCommerce Breadcrumbs or disable them altogether
 Version: 1.0.7
 WC requires at least: 2.6
-WC tested up to: 4.0
+WC tested up to: 4.7
 Author: Anthony Hortin
 Author URI: http://maddisondesigns.com
 Text Domain: woocommerce-breadcrumbs
