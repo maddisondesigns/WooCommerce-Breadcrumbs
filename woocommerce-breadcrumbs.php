@@ -24,7 +24,7 @@ class Wcb_WooCommerce_Breadcrumbs_plugin {
 	public function __construct() {
 
 		$this->breadcrumb_defaults = array(
-			'wcb_enable_breadcrumbs' => 1,
+			'wcb_enable_breadcrumbs' => '1',
 			'wcb_breadcrumb_delimiter' => ' &#47; ',
 			'wcb_wrap_before' => '<nav class="woocommerce-breadcrumb">',
 			'wcb_wrap_after' => '</nav>',
@@ -40,11 +40,6 @@ class Wcb_WooCommerce_Breadcrumbs_plugin {
 		add_filter( 'plugin_action_links', array( $this, 'wcb_add_settings_link'), 10, 2);
 		add_action( 'head', 'woocommerce_breadcrumb', 20, 0);
 
-		$this->options = ( get_option( 'wcb_breadcrumb_options' ) === false ? $this->breadcrumb_defaults : get_option( 'wcb_breadcrumb_options' ) );
-
-		if( empty( $this->options['wcb_enable_breadcrumbs'] ) ) {
-			add_action( 'init', array( $this, 'wcb_remove_woocommerce_breadcrumb' ) );
-		}
 	}
 
 	/**
@@ -142,6 +137,15 @@ class Wcb_WooCommerce_Breadcrumbs_plugin {
 	 * Set the breadcrumbs now that we have all the details
 	 */
 	public function wcb_init() {
+		// Load our Breadcrumb options or the default if they don't exist
+		$this->options = ( get_option( 'wcb_breadcrumb_options' ) === false ? $this->breadcrumb_defaults : get_option( 'wcb_breadcrumb_options' ) );
+
+		// Remove the breadcrumbs if the option is turned off.
+		// Add action to wp_loaded hook since this function has already been called on the init hook
+		if( empty( $this->options['wcb_enable_breadcrumbs'] ) ) {
+			add_action( 'wp_loaded', array( $this, 'wcb_remove_woocommerce_breadcrumb' ) );
+		}
+		
 		if ( class_exists( 'Storefront' ) ) {
 			$this->storefront_theme = true;
 		}
