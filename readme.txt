@@ -3,8 +3,8 @@ Contributors: ahortin
 Donate Link: http://maddisondesigns.com/woocommerce-breadcrumbs
 Tags: ecommerce, e-commerce, commerce, woothemes, wordpress ecommerce, woocommerce, breadcrumbs
 Requires at least: 4.6
-Tested up to: 6.1
-Stable tag: 1.0.8
+Tested up to: 6.4
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -64,6 +64,9 @@ Storefront wraps their breadcrumbs with some custom HTML. This means you need to
 
 
 == Changelog ==
+
+= 1.1.0 =
+- Declare compatibility with WooCommerce HPOS
 
 = 1.0.8 =
 - Moved loading of options from Constructor to help with translations by Falang plugin. Props @sbouey

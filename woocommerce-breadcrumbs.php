@@ -3,16 +3,15 @@
 Plugin Name: WooCommerce Breadcrumbs
 Plugin URI: http://maddisondesigns.com/woocommerce-breadcrumbs
 Description: A simple plugin to style the WooCommerce Breadcrumbs or disable them altogether
-Version: 1.0.8
+Version: 1.1.0
 WC requires at least: 2.6
-WC tested up to: 7.4
+WC tested up to: 8.5
 Author: Anthony Hortin
 Author URI: http://maddisondesigns.com
 Text Domain: woocommerce-breadcrumbs
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
-
 
 class Wcb_WooCommerce_Breadcrumbs_plugin {
 
@@ -361,3 +360,13 @@ class Wcb_WooCommerce_Breadcrumbs_plugin {
 }
 
 $wcb_woocommerce_breadcrumbs = new Wcb_WooCommerce_Breadcrumbs_plugin();
+
+/**
+ * Declare WooCommerce HPOS compatibility
+ */
+function wcb_declare_hpos_compat() {
+	if ( class_exists( \Automattic\WooCommerce\Utilities\FeaturesUtil::class ) ) {
+		\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', __FILE__, true );
+	}
+}
+add_action( 'before_woocommerce_init', 'wcb_declare_hpos_compat' );
