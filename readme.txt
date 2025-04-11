@@ -3,8 +3,8 @@ Contributors: ahortin
 Donate Link: http://maddisondesigns.com/woocommerce-breadcrumbs
 Tags: ecommerce, e-commerce, commerce, woocommerce, breadcrumbs
 Requires at least: 4.6
-Tested up to: 6.7
-Stable tag: 1.1.0
+Tested up to: 6.8
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -64,6 +64,10 @@ Storefront wraps their breadcrumbs with some custom HTML. This means you need to
 
 
 == Changelog ==
+
+= 1.2.0 =
+- Fixed issue with text domain loading notice
+- Updated WC Tested tags
 
 = 1.1.0 =
 - Declare compatibility with WooCommerce HPOS

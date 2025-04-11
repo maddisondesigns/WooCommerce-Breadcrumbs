@@ -3,9 +3,9 @@
 Plugin Name: WooCommerce Breadcrumbs
 Plugin URI: http://maddisondesigns.com/woocommerce-breadcrumbs
 Description: A simple plugin to style the WooCommerce Breadcrumbs or disable them altogether
-Version: 1.1.0
+Version: 1.2.0
 WC requires at least: 2.6
-WC tested up to: 9.3
+WC tested up to: 9.8
 Author: Anthony Hortin
 Author URI: http://maddisondesigns.com
 Text Domain: woocommerce-breadcrumbs
@@ -21,7 +21,18 @@ class Wcb_WooCommerce_Breadcrumbs_plugin {
 	private $storefront_theme;
 
 	public function __construct() {
+		add_action( 'init', array( $this, 'wcb_setup_defaults' ) );
+		add_action( 'admin_menu', array( $this, 'wcb_create_menu_option' ) );
+		add_action( 'admin_init', array( $this, 'wcb_admin_init' ) );
+		add_action( 'init', array( $this, 'wcb_init' ) );
+		add_filter( 'plugin_action_links', array( $this, 'wcb_add_settings_link'), 10, 2);
+		add_action( 'head', 'woocommerce_breadcrumb', 20, 0);
+	}
 
+	/**
+	 * Setup breadcrumb defaults on init hook to ensure translation functions aren't called too early
+	 */
+	public function wcb_setup_defaults() {
 		$this->breadcrumb_defaults = array(
 			'wcb_enable_breadcrumbs' => '1',
 			'wcb_breadcrumb_delimiter' => ' &#47; ',
@@ -32,13 +43,6 @@ class Wcb_WooCommerce_Breadcrumbs_plugin {
 			'wcb_home_text' => _x( 'Home', 'breadcrumb', 'woocommerce-breadcrumbs' ),
 			'wcb_home_url' => esc_url( home_url( '/' ) )
 			);
-
-		add_action( 'admin_menu', array( $this, 'wcb_create_menu_option' ) );
-		add_action( 'admin_init', array( $this, 'wcb_admin_init' ) );
-		add_action( 'init', array( $this, 'wcb_init' ) );
-		add_filter( 'plugin_action_links', array( $this, 'wcb_add_settings_link'), 10, 2);
-		add_action( 'head', 'woocommerce_breadcrumb', 20, 0);
-
 	}
 
 	/**
