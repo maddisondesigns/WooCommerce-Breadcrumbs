@@ -1,10 +1,10 @@
-=== WooCommerce Breadcrumbs ===
+=== Breadcrumbs for WooCommerce ===
 Contributors: ahortin
-Donate Link: http://maddisondesigns.com/woocommerce-breadcrumbs
+Donate Link: http://maddisondesigns.com/breadcrumbs-for-woocommerce
 Tags: ecommerce, e-commerce, commerce, woocommerce, breadcrumbs
 Requires at least: 4.6
 Tested up to: 6.8
-Stable tag: 1.2.0
+Stable tag: 1.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,13 +12,13 @@ A simple plugin to style the WooCommerce Breadcrumbs or disable them altogether
 
 == Description ==
 
-WooCommerce Breadcrumbs is a simple WordPress plugin that allows you to restyle the WooCommerce breadcrumbs. It also gives you the ability to disable them completely so they no longer display.
+Breadcrumbs for WooCommerce is a simple WordPress plugin that helps you restyle the WooCommerce breadcrumbs. It also gives you the ability to disable them completely so they no longer display.
 
-By changing the HTML surrounding your breadcrumbs, you’re able to provide better options for styling your breadcrumbs in different ways. For example, the default breadcrumbs simply display links with a separator character. Using WooCommerce Breadcrumbs, you can change them to display as an unsorted list of links instead.
+By changing the HTML surrounding your breadcrumbs, you’re able to provide better options for styling your breadcrumbs in different ways. For example, the default breadcrumbs simply display links with a separator character. Using Breadcrumbs for WooCommerce, you can change them to display as an unsorted list of links instead.
 
 NOTE: This plugin wont actually style your breadcrumbs for you. It simply gives you the tools to change the HTML that wraps around your breadcrumbs.
 
-= WooCommerce Breadcrumbs gives you the following settings =
+= Breadcrumbs for WooCommerce gives you the following settings =
 
 * Breadcrumb separator: This is the separator to use between each breadcrumb
 * Wrap before: The opening HTML tag to wrap before all your breadcrumbs
@@ -32,14 +32,14 @@ If need be, you can also disable the breadcrumbs completely by unticking the 'En
 
 If you notice there are a few less breadcrumb options on the settings page than you expected, then you're mostly likely using a WooThemes Theme. WooTheme themes disable the WooCommerce breadcrumbs in favour of the WooFramework Breadcrumbs. The downside to this is that there aren't quite as many options that can be changed with the WooFramework Breadcrumbs.
 
-To see some examples of how you can style your WooCommerce Breadcrumbs, check out the [plugin homepage](http://maddisondesigns.com/woocommerce-breadcrumbs/).
+To see some examples of how you can style your WooCommerce Breadcrumbs, check out the [plugin homepage](http://maddisondesigns.com/breadcrumbs-for-woocommerce/).
 
 
 == Installation ==
 
 1. Upload the 'woocommerce-breadcrumbs' folder to your '/wp-content/plugins/' directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Go to the 'Settings > WC Breadcrumbs' menu to update the plugin settings
+3. Go to the 'Settings > Breadcrumbs for WC' menu to update the plugin settings
 
 
 == Frequently Asked Questions ==
@@ -58,12 +58,16 @@ Storefront wraps their breadcrumbs with some custom HTML. This means you need to
 
 == Screenshots ==
 
-1. WooCommerce Breadcrumb default settings
-2. WooCommerce Breadcrumb settings
-3. WooCommerce Breadcrumb settings for WooTheme Themes
+1. Breadcrumbs for WooCommerce default settings
+2. Breadcrumbs for WooCommerce settings
+3. Breadcrumbs for WooCommerce settings for WooTheme Themes
 
 
 == Changelog ==
+
+= 1.3.0 =
+- Updated plugin name to avoid violating WooCommerce trademark
+- Added requirement for WooCommerce into plugin header
 
 = 1.2.0 =
 - Fixed issue with text domain loading notice

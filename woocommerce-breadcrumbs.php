@@ -1,19 +1,20 @@
 <?php
 /*
-Plugin Name: WooCommerce Breadcrumbs
-Plugin URI: http://maddisondesigns.com/woocommerce-breadcrumbs
+Plugin Name: Breadcrumbs for WooCommerce
+Plugin URI: http://maddisondesigns.com/breadcrumbs-for-woocommerce
 Description: A simple plugin to style the WooCommerce Breadcrumbs or disable them altogether
-Version: 1.2.0
+Version: 1.3.0
 WC requires at least: 2.6
 WC tested up to: 9.8
 Author: Anthony Hortin
 Author URI: http://maddisondesigns.com
 Text Domain: woocommerce-breadcrumbs
+Requires Plugins: woocommerce
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
-class Wcb_WooCommerce_Breadcrumbs_plugin {
+class Wcb_Breadcrumbs_for_WooCommerce_plugin {
 
 	private $options;
 	private $breadcrumb_defaults;
@@ -49,7 +50,7 @@ class Wcb_WooCommerce_Breadcrumbs_plugin {
 	 * Add a new option to the Settings menu
 	 */
 	public function wcb_create_menu_option() {
-		add_options_page( 'WooCommerce Breadcrumbs', 'WC Breadcrumbs', 'manage_options', 'woocommerce-breadcrumbs', array( $this, 'wcb_plugin_settings_page' ) );
+		add_options_page( 'Breadcrumbs for WooCommerce', 'Breadcrumbs for WC', 'manage_options', 'woocommerce-breadcrumbs', array( $this, 'wcb_plugin_settings_page' ) );
 	}
 
 	/**
@@ -74,31 +75,33 @@ class Wcb_WooCommerce_Breadcrumbs_plugin {
 	 * Create our settings page
 	 */
 	public function wcb_plugin_settings_page() {
+		$other_attributes = array();
 		$this->options = ( get_option( 'wcb_breadcrumb_options' ) === false ? $this->breadcrumb_defaults : get_option( 'wcb_breadcrumb_options' ) );
 
 		if( !is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
-			$message = __('It appears that WooCommerce is not currently activated. To get the most out of WooCommerce Breadcrumbs install & activate the WooCommerce plugin', 'woocommerce-breadcrumbs' );
+			$message = __('It appears that WooCommerce is not currently activated. To get the most out of Breadcrumbs for WooCommerce install & activate the WooCommerce plugin', 'woocommerce-breadcrumbs' );
 			add_settings_error( 'woocommerce-breadcrumb-warnings', esc_attr( 'wcb_woocommerce_disabled' ), $message, 'error' );
 		}
 
 		if ( $this->wootheme_theme ) {
-			$message = esc_html("It looks like you're using a WooThemes theme. If you notice a few less breadcrumb options than you may expect this is because WooThemes disables the WooCommerce breadcrumbs in favour of the WooFramework Breadcrumbs.", 'woocommerce-breadcrumbs' );
+			$message = esc_html("It looks like you're using a WooThemes theme. If you notice a few less breadcrumb options than you may expect this is because WooThemes disables the default WooCommerce breadcrumbs in favour of their WooFramework Breadcrumbs.", 'woocommerce-breadcrumbs' );
 			add_settings_error( 'woocommerce-breadcrumb-warnings', esc_attr( 'wcb_woo_framework_breadcrumbs' ), $message, 'updated' );
 		}
 
 		settings_errors( 'woocommerce-breadcrumb-warnings' );
 
 		echo '<div class="wrap">';
-			echo '<h2>WooCommerce Breadcrumbs</h2>';
+			echo '<h2>Breadcrumbs for WooCommerce</h2>';
 			echo '<form action="options.php" method="post">';
 				settings_fields( 'wcb_breadcrumb_options' );
 				do_settings_sections( 'woocommerce-breadcrumbs' );
 				echo '<p>';
-					submit_button( _x( 'Save Changes', 'breadcrumb', 'woocommerce-breadcrumbs' ), 'primary', 'submit', false  );
 					$other_attributes = array (
-						'onclick' => "return confirm( '" . esc_html__( 'Click OK to reset to the default breadcrumb settings!', 'woocommerce-breadcrumbs' ) . "' );"
+						'onclick' => "return confirm( '" . esc_html__( 'Click OK to reset to the default breadcrumb settings!', 'woocommerce-breadcrumbs' ) . "' );",
+						'style' => 'margin-right:16px;'
 						);
-					submit_button( 'Restore Defaults', 'secondary alignright', 'restore_defaults', false, $other_attributes );
+					submit_button( 'Restore Defaults', 'secondary', 'restore_defaults', false, $other_attributes );
+					submit_button( _x( 'Save Changes', 'breadcrumb', 'woocommerce-breadcrumbs' ), 'primary', 'submit', false  );
 				echo '</p>';
 			echo '</form>';
 		echo '</div>';
@@ -363,7 +366,7 @@ class Wcb_WooCommerce_Breadcrumbs_plugin {
 	}
 }
 
-$wcb_woocommerce_breadcrumbs = new Wcb_WooCommerce_Breadcrumbs_plugin();
+$wcb_breadcrumbs_for_woocommerce = new Wcb_Breadcrumbs_for_WooCommerce_plugin();
 
 /**
  * Declare WooCommerce HPOS compatibility
