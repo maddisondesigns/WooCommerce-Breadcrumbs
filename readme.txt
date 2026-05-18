@@ -3,7 +3,7 @@ Contributors: ahortin
 Donate Link: http://maddisondesigns.com/breadcrumbs-for-woocommerce
 Tags: ecommerce, e-commerce, commerce, woocommerce, breadcrumbs
 Requires at least: 4.6
-Tested up to: 6.8
+Tested up to: 7.0
 Stable tag: 1.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
